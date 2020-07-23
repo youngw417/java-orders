@@ -26,6 +26,7 @@ public class Customer {
     private String grade;
     private double openingamt;
     private double receiveamt;
+    private double paymentamt;
     private double outstandingamt;
     private String phone;
 
@@ -33,7 +34,7 @@ public class Customer {
     @JoinColumn(name="agentcode", nullable = false)
     private Agent agent;
 
-    @OneToMany(mappedBy = "custcode", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Order> orders = new ArrayList<>();
 
     public Customer() {
@@ -43,9 +44,11 @@ public class Customer {
             String custname,
             String custcity,
             String custcountry,
+            String workingarea,
             String grade,
             double openingamt,
             double receiveamt,
+            double paymentamt,
             double outstandingamt,
             String phone,
             Agent agent
@@ -57,10 +60,12 @@ public class Customer {
         this.grade = grade;
         this.openingamt = openingamt;
         this.receiveamt = receiveamt;
+        this.paymentamt = paymentamt;
         this.outstandingamt = outstandingamt;
         this.phone = phone;
         this.agent = agent;
     }
+
 
     public long getCustcode() {
         return custcode;

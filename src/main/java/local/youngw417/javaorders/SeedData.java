@@ -1,14 +1,14 @@
-package com.lambdaschool.crudyorders;
+package local.youngw417.javaorders;
 
-import com.github.javafaker.Faker;
-import com.lambdaschool.crudyorders.models.Agent;
-import com.lambdaschool.crudyorders.models.Customer;
-import com.lambdaschool.crudyorders.models.Order;
-import com.lambdaschool.crudyorders.models.Payment;
-import com.lambdaschool.crudyorders.repositories.AgentsRepository;
-import com.lambdaschool.crudyorders.repositories.CustomersRepository;
-import com.lambdaschool.crudyorders.repositories.OrdersRepository;
-import com.lambdaschool.crudyorders.repositories.PaymentRepository;
+
+import local.youngw417.javaorders.models.Agent;
+import local.youngw417.javaorders.models.Customer;
+import local.youngw417.javaorders.models.Order;
+import local.youngw417.javaorders.models.Payment;
+import local.youngw417.javaorders.repositories.AgentRepository;
+import local.youngw417.javaorders.repositories.CustomerRepository;
+import local.youngw417.javaorders.repositories.OrderRepository;
+import local.youngw417.javaorders.repositories.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -21,25 +21,25 @@ import java.util.Set;
 
 
 @Transactional
-@Component
+//@Component
 public class SeedData implements CommandLineRunner {
     /**
      * Connects the customer table to this SeedData method
      */
     @Autowired
-    private CustomersRepository custrepos;
+    private CustomerRepository custrepos;
 
     /**
      * Connects the agents table to this SeedData method
      */
     @Autowired
-    private AgentsRepository agentrepos;
+    private AgentRepository agentrepos;
 
     /**
      * Connects the orders table to this SeedData method
      */
     @Autowired
-    private OrdersRepository ordersrepos;
+    private OrderRepository ordersrepos;
 
     /**
      * Connects the payment table to this SeedData method
@@ -130,6 +130,15 @@ public class SeedData implements CommandLineRunner {
                 "008-22536178",
                 "");
 
+//        String custname,
+//        String custcity,
+//        String custcountry,
+//        String grade,
+//        double openingamt,
+//        double receiveamt,
+//        double outstandingamt,
+//        String phone,
+//        Agent agent
         Customer c01 = new Customer("Holmes",
                 "London",
                 "London",
@@ -165,7 +174,7 @@ public class SeedData implements CommandLineRunner {
                 a08);
         Customer c04 = new Customer("Ravindran",
                 "Bangalore",
-                "Bangalore",
+                "New York",
                 "India",
                 "2",
                 5000.00,
@@ -176,7 +185,7 @@ public class SeedData implements CommandLineRunner {
                 a11);
         Customer c05 = new Customer("Cook",
                 "London",
-                "London",
+                "New York",
                 "UK",
                 "2",
                 4000.00,
@@ -187,7 +196,7 @@ public class SeedData implements CommandLineRunner {
                 a06);
         Customer c06 = new Customer("Stuart",
                 "London",
-                "London",
+                "New York",
                 "UK",
                 "1",
                 6000.00,
@@ -209,7 +218,7 @@ public class SeedData implements CommandLineRunner {
                 a08);
         Customer c08 = new Customer("Fleming",
                 "Brisban",
-                "Brisban",
+                "New York",
                 "Australia",
                 "2",
                 7000.00,
@@ -220,7 +229,7 @@ public class SeedData implements CommandLineRunner {
                 a05);
         Customer c09 = new Customer("Jacks",
                 "Brisban",
-                "Brisban",
+                "New York",
                 "Australia",
                 "1",
                 7000.00,
@@ -231,7 +240,7 @@ public class SeedData implements CommandLineRunner {
                 a05);
         Customer c10 = new Customer("Yearannaidu",
                 "Chennai",
-                "Chennai",
+                "New York",
                 "India",
                 "1",
                 8000.00,
@@ -242,7 +251,7 @@ public class SeedData implements CommandLineRunner {
                 a10);
         Customer c11 = new Customer("Sasikant",
                 "Mumbai",
-                "Mumbai",
+                "New York",
                 "India",
                 "1",
                 7000.00,
@@ -253,7 +262,7 @@ public class SeedData implements CommandLineRunner {
                 a02);
         Customer c12 = new Customer("Ramanathan",
                 "Chennai",
-                "Chennai",
+                "New York",
                 "India",
                 "1",
                 7000.00,
@@ -264,7 +273,7 @@ public class SeedData implements CommandLineRunner {
                 a10);
         Customer c13 = new Customer("Avinash",
                 "Mumbai",
-                "Mumbai",
+                "New York",
                 "India",
                 "2",
                 7000.00,
@@ -275,7 +284,7 @@ public class SeedData implements CommandLineRunner {
                 a02);
         Customer c14 = new Customer("Winston",
                 "Brisban",
-                "Brisban",
+                "New York",
                 "Australia",
                 "1",
                 5000.00,
@@ -286,7 +295,7 @@ public class SeedData implements CommandLineRunner {
                 a05);
         Customer c15 = new Customer("Karl",
                 "London",
-                "London",
+                "New York",
                 "UK",
                 "0",
                 4000.00,
@@ -297,7 +306,7 @@ public class SeedData implements CommandLineRunner {
                 a06);
         Customer c16 = new Customer("Shilton",
                 "Torento",
-                "Torento",
+                "New York",
                 "Canada",
                 "1",
                 10000.00,
@@ -308,7 +317,7 @@ public class SeedData implements CommandLineRunner {
                 a04);
         Customer c17 = new Customer("Charles",
                 "Hampshair",
-                "Hampshair",
+                "New York",
                 "UK",
                 "3",
                 6000.00,
@@ -319,7 +328,7 @@ public class SeedData implements CommandLineRunner {
                 a09);
         Customer c18 = new Customer("Srinivas",
                 "Bangalore",
-                "Bangalore",
+                "New York",
                 "India",
                 "2",
                 8000.00,
@@ -330,7 +339,7 @@ public class SeedData implements CommandLineRunner {
                 a07);
         Customer c19 = new Customer("Steven",
                 "San Jose",
-                "San Jose",
+                "New York",
                 "USA",
                 "1",
                 5000.00,
@@ -341,7 +350,7 @@ public class SeedData implements CommandLineRunner {
                 a10);
         Customer c20 = new Customer("Karolina",
                 "Torento",
-                "Torento",
+                "New York",
                 "Canada",
                 "1",
                 7000.00,
@@ -352,7 +361,7 @@ public class SeedData implements CommandLineRunner {
                 a04);
         Customer c21 = new Customer("Martin",
                 "Torento",
-                "Torento",
+                "New York",
                 "Canada",
                 "2",
                 8000.00,
@@ -363,7 +372,7 @@ public class SeedData implements CommandLineRunner {
                 a04);
         Customer c22 = new Customer("Ramesh",
                 "Mumbai",
-                "Mumbai",
+                "New York",
                 "India",
                 "3",
                 8000.00,
@@ -374,7 +383,7 @@ public class SeedData implements CommandLineRunner {
                 a02);
         Customer c23 = new Customer("Rangarappa",
                 "Bangalore",
-                "Bangalore",
+                "New York",
                 "India",
                 "2",
                 8000.00,
@@ -385,7 +394,7 @@ public class SeedData implements CommandLineRunner {
                 a01);
         Customer c24 = new Customer("Venkatpati",
                 "Bangalore",
-                "Bangalore",
+                "New York",
                 "India",
                 "2",
                 8000.00,
@@ -396,7 +405,7 @@ public class SeedData implements CommandLineRunner {
                 a07);
         Customer c25 = new Customer("Sundariya",
                 "Chennai",
-                "Chennai",
+                "New York",
                 "India",
                 "3",
                 7000.00,

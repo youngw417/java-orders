@@ -12,11 +12,11 @@ import javax.transaction.Transactional;
 public class CustomerServicesImpl implements CustomerServices{
 
     @Autowired
-    private CustomerRepository customerrepos;
+    private CustomerRepository custrepos;
 
     @Transactional
     @Override
     public Customer save(Customer customer) {
-        return customerrepos.save(customer);
+        return custrepos.save(customer);
     }
 }
