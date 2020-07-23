@@ -30,18 +30,19 @@ public class Order {
     }
 
     public Order(
-            long ordnum,
+
             double ordamount,
             double advanceamount,
             Customer customer,
             String orderdescription
     ) {
-        this.ordnum = ordnum;
+
         this.ordamount = ordamount;
         this.advanceamount = advanceamount;
         this.customer = customer;
         this.orderdescription = orderdescription;
     }
+
 
     public long getOrdnum() {
         return ordnum;
@@ -89,5 +90,9 @@ public class Order {
 
     public void setPayments(Set<Payment> payments) {
         this.payments = payments;
+    }
+
+    public void addPayments(Payment payment){
+        this.payments.add(payment);
     }
 }

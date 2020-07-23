@@ -27,4 +27,5 @@ public class Payment {
     ) {
         this.type = type;
     }
+
 }

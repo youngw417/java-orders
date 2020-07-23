@@ -13,11 +13,11 @@ import javax.transaction.Transactional;
 public class OrderServicesImpl implements OrderServices {
 
     @Autowired
-    private OrderRepository orderrepos;
+    private OrderRepository ordersrepos;
 
     @Transactional
     @Override
     public Order save(Order order) {
-        return orderrepos.save(order);
+        return ordersrepos.save(order);
     }
 }
