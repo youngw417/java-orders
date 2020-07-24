@@ -1,5 +1,6 @@
 package local.youngw417.javaorders.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.aspectj.weaver.ast.Or;
 
 import javax.persistence.*;
@@ -32,9 +33,11 @@ public class Customer {
 
     @ManyToOne
     @JoinColumn(name="agentcode", nullable = false)
+    @JsonIgnoreProperties("customers")
     private Agent agent;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("customer")
     private List<Order> orders = new ArrayList<>();
 
     public Customer() {
@@ -52,6 +55,7 @@ public class Customer {
             double outstandingamt,
             String phone,
             Agent agent
+
     ) {
         this.custname = custname;
         this.custcity = custcity;
@@ -153,5 +157,21 @@ public class Customer {
 
     public void setAgent(Agent agent) {
         this.agent = agent;
+    }
+
+    public double getPaymentamt() {
+        return paymentamt;
+    }
+
+    public void setPaymentamt(double paymentamt) {
+        this.paymentamt = paymentamt;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }
